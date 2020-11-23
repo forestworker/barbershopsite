@@ -3,37 +3,82 @@
   padding: 0;
 }
 
-.navbar img {
-  width: 120px;
-  max-width: 200px;
+.header{
+  height: 100px;
+  background: black;
+  padding: 0 20px;
+  color: white;
+}
+.logo{
+  width: 90px;
+  padding-top: 5px;
 }
 
-.navbar {
-  background-color: black;
-  padding: 0;
-  margin: 0;
+.menu{
+  float: right;
+  line-height: 100px;
 }
-
-.navbar a{
-  width: 200px;
-  height: 70px;
+.menu a{
+  color: #fff;
+  text-transform: uppercase;
   text-decoration: none;
-  align-items: center;
-  color: black;
-  background-color: white;
-  border-radius: 10px;
-  display: flex;
-  justify-content: space-evenly;
+  padding: 0 100px;
+  transition: 0.4s;
 }
-
-.navbar a:hover{
-  color: black;
+.show-menu-btn,.hide-menu-btn{
+  transition: 0.4s;
+  font-size: 30px;
+  cursor: pointer;
+  display: none;
+}
+.show-menu-btn{
+  float: right;
+}
+.show-menu-btn i{
+  line-height: 100px;
+}
+.menu a:hover,
+.show-menu-btn:hover,
+.hide-menu-btn:hover{
+  color: #3498db;
   text-decoration: none;
-  transform: scale(1.1);
-  box-shadow: 5px 5px 15px 5px rgba(123, 188, 238, 1);
-  transition: 1s;
 }
 
+#chk{
+  position: absolute;
+  visibility: hidden;
+  z-index: -1111;
+}
+
+@media screen and (max-width:800px) {
+  .show-menu-btn,.hide-menu-btn{
+    display: block;
+  }
+  .menu{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #333;
+    right: -100%;
+    top: 0;
+    text-align: center;
+    padding: 80px 0;
+    line-height: normal;
+    transition: 0.7s;
+  }
+  .menu a{
+    display: block;
+    padding: 20px;
+  }
+  .hide-menu-btn{
+    position: absolute;
+    top: 40px;
+    right: 40px;
+  }
+  #chk:checked ~ .menu{
+    right: 0;
+  }
+}
 .workimage {
   width: 100%;
   height: 100vh;
